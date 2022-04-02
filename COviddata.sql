@@ -45,7 +45,7 @@ order by total_deaths desc
 
 -- Continents with highest death count 
  
- select continent, max(cast(total_deaths as int)) as total_deaths from covidproject.dbo.coviddeaths
+ select continent, sum(cast(new_deaths as int)) as total_deaths from covidproject.dbo.coviddeaths
 
 where continent is not null
 group by continent
